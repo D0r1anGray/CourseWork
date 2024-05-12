@@ -14,7 +14,7 @@ public class ConnectionToDatabase {
     Scanner scanner = new Scanner(System.in);
 
     public ConnectionToDatabase() {
-        this.db_url = "jdbc:postgresql://localhost:5432/doriangray";
+        this.db_url = "jdbc:postgresql://localhost:5432/kurs";
         this.db_user = enter_db_user();
         this.db_password = enter_db_password();
         this.connection = setConnection();
@@ -34,8 +34,12 @@ public class ConnectionToDatabase {
         return scanner.nextLine();
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
+
     private Connection setConnection() {
-        System.out.println("Database doriangray");
+        System.out.println("Successfully connected");
         try {
             connection = DriverManager.getConnection(this.db_url, this.db_user, this.db_password);
         } catch (SQLException e) {
