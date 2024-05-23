@@ -1,4 +1,4 @@
-package org.coursework;
+package org.coursework.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,12 +14,25 @@ public class ConnectionToDatabase {
     Scanner scanner = new Scanner(System.in);
 
     public ConnectionToDatabase() {
-        this.db_url = "jdbc:postgresql://localhost:5432/kurs";
+        this.db_url = "jdbc:postgresql://localhost:5432/doriangray";
         this.db_user = enter_db_user();
         this.db_password = enter_db_password();
         this.connection = setConnection();
     }
+    public ConnectionToDatabase(String url, String user, String password){
+        this.db_url = url;
+        this.db_user = user;
+        this.db_password = password;
+        this.connection = setConnection();
+    }
 
+    public String get_db_name(){
+        String db_name = db_url.substring(db_url.lastIndexOf("/")+1);
+        return db_name;
+    }
+    public String get_db_user(){
+        return db_user;
+    }
     private String enter_db_url() {
         System.out.print("Enter database URL: ");
         return scanner.nextLine();

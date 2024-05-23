@@ -1,8 +1,8 @@
 package org.coursework.execution;
 
-import java.sql.Connection;
+import org.coursework.database.ConnectionToDatabase;
+
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public abstract class ExecuteQuery {
     protected void printSQLException(SQLException ex){
@@ -20,7 +20,7 @@ public abstract class ExecuteQuery {
             }
         }
     }
-    public void execute_query(Connection connection, String sql_query){
+    public void execute_query(ConnectionToDatabase con, String sql_query){
 //        System.out.println(sql_query);
 //        try{
 //            Statement statement = connection.createStatement();

@@ -1,7 +1,7 @@
-package org.coursework;
+package org.coursework.create;
 
+import org.coursework.database.ConnectionToDatabase;
 import org.coursework.execution.ExecuteQuery;
-import org.coursework.execution.ExecuteQueryCreate;
 
 import java.sql.Connection;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class CreateTable{
 
     Scanner scanner = new Scanner(System.in);
 
-    public CreateTable(Connection connection){
+    public CreateTable(ConnectionToDatabase connection){
         String sql_query = create_table();
         ExecuteQuery executeQuery = new ExecuteQueryCreate();
         executeQuery.execute_query(connection, sql_query);

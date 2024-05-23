@@ -1,15 +1,18 @@
-package org.coursework.execution;
+package org.coursework.select;
+
+import org.coursework.database.ConnectionToDatabase;
+import org.coursework.execution.ExecuteQuery;
 
 import java.sql.*;
 
-public class ExecuteQuerySelect extends ExecuteQuery{
+public class ExecuteQuerySelect extends ExecuteQuery {
     @Override
-    public void execute_query(Connection connection, String sql_query){
+    public void execute_query(ConnectionToDatabase con, String sql_query){
         System.out.println(sql_query);
         try{
 //            Statement statement = connection.createStatement();
 //            statement.executeUpdate(sql_query);
-            PreparedStatement preparedStatement = connection.prepareStatement(sql_query);
+            PreparedStatement preparedStatement = con.getConnection().prepareStatement(sql_query);
             ResultSet rs = preparedStatement.executeQuery();
 
             // System.out.println(rs);
