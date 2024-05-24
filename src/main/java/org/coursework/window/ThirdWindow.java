@@ -20,7 +20,7 @@ public class ThirdWindow extends JFrame {
 
         final String[] file_path = new String[1];
 
-        setTitle("создание копии БД");
+        setTitle("создание логической копии");
         setSize(400, 200);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
 

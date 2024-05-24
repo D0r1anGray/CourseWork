@@ -19,7 +19,7 @@ public class FourthWindow extends JFrame {
     private void initUI() {
         final String[] file_path = new String[1];
 
-        setTitle("создание копии ЖТ");
+        setTitle("создание физической копиии");
         setSize(400, 200);
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
 
